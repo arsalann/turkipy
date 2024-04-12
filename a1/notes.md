@@ -40,3 +40,6 @@ he suggests gunes restaurant, she says every birthday we go there and wants to g
 he suggests going to cinema to watch a romantic movie, she says we go to cinema every week
 he suggests going to theatre because they havent been in a while, she says its a good idea, she asks which play to go to, big theatre play
 she asks where to meet tonight, he says at 6 at taksim, play starts at 8 and drink something before the play
+
+
+### pg 108 #6

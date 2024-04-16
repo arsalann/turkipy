@@ -42,4 +42,7 @@ he suggests going to theatre because they havent been in a while, she says its a
 she asks where to meet tonight, he says at 6 at taksim, play starts at 8 and drink something before the play
 
 
-### pg 108 #6
+### pg 113 #7 Dinleme 17
+merhaba kseniya. nasılsın
+ıyıyım. yarın yanındayız çok heycanlıyım. sen bir plan yaptın mı? orada neler yapıyoruz?
+her sey hazır. siz üçaktan indikten sonra sizi sultanahmeteki otele götürüyorum. Biliyorsun, ben evde kalıyorum ama evde sizin

@@ -1,10 +1,18 @@
 import pandas as pd
 import numpy as np
 
+
+
+
+def user_inputs():
+    
+
 def main():
     dictionary_file = 'dictionary.csv'
     phrases_file = 'phrases.csv'
 
+    correct = 0
+    wrong = 0
     practice = input('What do you want to practice? ')
 
     if practice == 'kelime':
@@ -34,10 +42,12 @@ def main():
 
                     # check if the response is in the list of meanings
                     if response in list_meanings:
+                        correct += 1
                         continue
 
                     else:
                         # print in red color
+                        wrong += 1
                         print(f'\033[91m{x} ~> {df.loc[word_id, "anlam"]}\033[0m')
                 else:
                     # get the word from the kelime column in dataframe
@@ -49,10 +59,12 @@ def main():
 
                     # check if the response is in the list of meanings
                     if response in list_meanings:
+                        correct += 1
                         continue
 
                     else:
                         # print in red color
+                        wrong += 1
                         print(f'\033[91m{x} ~> {df.loc[word_id, "kelime"]}\033[0m')
 
         else:
@@ -78,10 +90,12 @@ def main():
 
                     # check if the response is in the list of meanings
                     if response in list_meanings:
+                        correct += 1
                         continue
 
                     else:
                         # print in red color
+                        wrong += 1
                         print(f'\033[91m{x} ~> {df.loc[word_id, "anlam"]}\033[0m')
                 else:
                     # get the word from the kelime column in dataframe
@@ -93,10 +107,12 @@ def main():
 
                     # check if the response is in the list of meanings
                     if response in list_meanings:
+                        correct += 1
                         continue
 
                     else:
                         # print in red color
+                        wrong += 1
                         print(f'\033[91m{x} ~> {df.loc[word_id, "kelime"]}\033[0m')
 
     elif practice == 'cumle':
@@ -117,6 +133,11 @@ def main():
             else:
                 # print in red color
                 print(f'\033[91m{x} ~> {df.loc[phrase_id, "anlam"]}\033[0m')
+
+    print(f'Correct: {correct}')
+    print(f'Wrong: {wrong}')
+    print(f'Total: {correct + wrong}')
+    print(f'Accuracy: {correct / (correct + wrong) * 100}%')
 
 if __name__ == '__main__':
     main()

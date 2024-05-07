@@ -2,10 +2,12 @@ import pandas as pd
 import numpy as np
 
 
-def loop_words(df, number_of_words):
+def loop_words(df, number_of_words, unique):
     correct = 0
     wrong = 0
     word_ids = np.random.randint(0, len(df), int(number_of_words))
+    if unique == 'True':
+        word_ids = np.random.choice(len(df), int(number_of_words), replace=False)
 
     for word_id in word_ids:
         # Select the column based on whether word_id is even or odd
@@ -56,16 +58,17 @@ def practice_words():
 
     print(f'Number of words in the dictionary: {len(df)}')
     number_of_words = input('How many words do you want to practice? ')
+    unique = input('Do you want only unique words? (True or False) ')
 
-    return df, number_of_words
+    return df, number_of_words, unique
 
 def main():
 
     practice = input('What do you want to practice? ')
 
     if practice == 'kelime':
-        df, number_of_words = practice_words()
-        loop_words(df, number_of_words)
+        df, number_of_words, unique = practice_words()
+        loop_words(df, number_of_words, unique)
 
 if __name__ == '__main__':
     main()

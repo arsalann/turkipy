@@ -46,3 +46,19 @@ she asks where to meet tonight, he says at 6 at taksim, play starts at 8 and dri
 merhaba kseniya. nasılsın
 ıyıyım. yarın yanındayız çok heycanlıyım. sen bir plan yaptın mı? orada neler yapıyoruz?
 her sey hazır. siz üçaktan indikten sonra sizi sultanahmeteki otele götürüyorum. Biliyorsun, ben evde kalıyorum ama evde sizin
+
+
+
+
+bir araya gelmek
+
+yiyicek
+icecek
+icki
+
+benimle hep dalga geciyor
+pg #84 #13
+duyurmak = announce
+gerekirse/gerek
+dedigim gibi - as i told you before
+havlamak - barking

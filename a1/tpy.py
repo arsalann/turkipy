@@ -39,6 +39,11 @@ def practice_words():
     df = pd.read_csv(dictionary_file, encoding='utf-8')
 
     # print all the categories line by line
+    print('Chapters:')
+    print('\n'.join(str(item) for item in df['chapter'].unique()))
+    chapter = input('Do you want to practice all words or a specific chapter? (i.e. "all" or name of category) ')
+
+    # print all the categories line by line
     print('Categories:')
     print('\n'.join(str(item) for item in df['kategori'].unique()))
     kategori = input('Do you want to practice all words or a specific category? (i.e. "all" or name of category) ')
@@ -47,6 +52,10 @@ def practice_words():
     print('Subcategories:')
     print('\n'.join(str(item) for item in df['altkategori'].unique()))
     altkategori = input('Do you want to practice all words or a specific subcategory? (i.e. "all" or name of subcategory) ')
+
+    if chapter != 'all':
+        df = df[df['chapter'] == chapter]
+        df = df.reset_index(drop=True)
 
     if kategori != 'all':
         df = df[df['kategori'] == kategori]
@@ -63,12 +72,30 @@ def practice_words():
     return df, number_of_words, unique
 
 def main():
-
+    phrases_file = 'phrases.csv'
     practice = input('What do you want to practice? ')
 
     if practice == 'kelime':
         df, number_of_words, unique = practice_words()
         loop_words(df, number_of_words, unique)
 
+    elif practice == 'cumle':
+        df = pd.read_csv(phrases_file, encoding='utf-8')
+
+        number_of_phrases = input('How many phrases do you want to practice? ')
+
+        # create n number of random numbers based on the number_of_phrases
+        phrase_ids = np.random.randint(0, len(df), int(number_of_phrases))
+
+        for phrase_id in phrase_ids:
+            # get the phrase from the cumle column in dataframe
+            x = df.loc[phrase_id, 'cumle']
+            response = input(f'{x} ~> ')
+
+            if response == df.loc[phrase_id, 'anlam']:
+                continue
+            else:
+                # print in red color
+                print(f'\033[91m{x} ~> {df.loc[phrase_id, "anlam"]}\033[0m')
 if __name__ == '__main__':
     main()
